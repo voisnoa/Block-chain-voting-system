@@ -1,0 +1,212 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Base animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.95); }
+    to { transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-10px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 120px auto;
+    width: 480px;
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    font-family: 'Inter', sans-serif;
+    animation: scaleIn 0.3s ease-out;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 48px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.text {
+    color: #1A1A1A;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.underline {
+    width: 40px;
+    height: 4px;
+    background: #2563EB;
+    border-radius: 2px;
+    animation: slideIn 0.6s ease-out;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    background: #F4F4F5;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeIn 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.input:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.input:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.input:focus-within {
+    border-color: #2563EB;
+    background: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+.input img {
+    margin: 0 16px;
+    transition: transform 0.3s ease;
+}
+
+.input:focus-within img {
+    transform: scale(1.1);
+}
+
+.input input {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #1A1A1A;
+    font-size: 16px;
+    padding: 0 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.forgot-password {
+    margin-top: 16px;
+    color: #6B7280;
+    font-size: 14px;
+    animation: fadeIn 0.5s ease-out;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
+.forgot-password span {
+    color: #2563EB;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.forgot-password span:hover {
+    color: #1D4ED8;
+    text-decoration: underline;
+}
+
+.submit-container {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    animation: fadeIn 0.5s ease-out;
+    animation-delay: 0.4s;
+    animation-fill-mode: both;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    color: #FFFFFF;
+    background: #2563EB;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Inter', sans-serif;
+}
+
+.submit:hover {
+    background: #1D4ED8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.submit:active {
+    transform: translateY(0);
+}
+
+.gray {
+    background: #EF4444;
+}
+
+.gray:hover {
+    background: #DC2626;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    background: #2563EB;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Inter', sans-serif;
+}
+
+.button:hover {
+    background: #1D4ED8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+/* Add loading state animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.98); }
+    100% { transform: scale(1); }
+}
+
+.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
