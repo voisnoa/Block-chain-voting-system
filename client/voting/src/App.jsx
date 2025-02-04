@@ -1,18 +1,16 @@
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Signup from './pages/LoginSignup';
-// import Home from './pages/Home';
-// import Vote from './pages/Vote';
-// import Results from './pages/Results';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
+// eslint-disable-next-line no-unused-vars
+import React from "react";
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/" element={<Home />} />
-        <Route path="/vote" element={<Vote />} />
-        <Route path="/results" element={<Results />} /> */}
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
       </Routes>
     </Router>
   );
