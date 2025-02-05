@@ -17,7 +17,8 @@ const LoginPage = () => {
         const response = await axios.post("http://localhost:3012/login", credentials);
         alert(response.data.message);
         localStorage.setItem("token", response.data.token); 
-        navigate("/register-voter");
+        // navigate("/register-voter");
+        navigate("/dashboard");
     } catch (error) {
         console.error(error);
         alert(error.response?.data?.error || "Login failed");

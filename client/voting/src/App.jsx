@@ -6,12 +6,16 @@ import LoginPage from "./pages/LoginPage";
 import React from "react";
 import VoterRegistration from "./pages/VoterRegistration";
 import VoterPage from "./pages/VoterPage";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/register-voter" element={<VoterRegistration />} />
         <Route path="/vote" element={<VoterPage />} />
