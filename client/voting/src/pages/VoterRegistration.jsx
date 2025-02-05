@@ -52,7 +52,7 @@ const VoterRegistration = () => {
     ) {
         console.log("🚀 Navigating to /vote");
         setTimeout(() => {
-            navigate("/vote");
+            navigate("/dashboard", { state: { voterStatus: "approved" } });
         }, 100);
     }
       

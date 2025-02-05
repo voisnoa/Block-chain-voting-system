@@ -12,6 +12,7 @@ import {
   LogOut,
 } from "lucide-react";
 import VoterStatus from "../components/VoterStatus";
+import { useLocation } from "react-router-dom";
 
 // ActivityItem Component
 const ActivityItem = ({ text, time }) => (
@@ -26,8 +27,10 @@ const Dashboard = ({
   onNavigate,
   onLogout,
   username = "User",
-  voterStatus = "unregistered", // can be "unregistered", "pending", "approved"
+  // voterStatus = "unregistered", // can be "unregistered", "pending", "approved"
 }) => {
+  const location = useLocation();
+  const voterStatus = location.state?.voterStatus || "unregistered";
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
