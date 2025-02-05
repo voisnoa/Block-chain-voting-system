@@ -150,58 +150,53 @@ const Dashboard = ({
 
         {/* Elections Section - Blurred if not approved */}
         <div
-          className={`relative ${
-            voterStatus !== "approved" ? "opacity-50 pointer-events-none" : ""
-          }`}
+          className="relative"
         >
           <div className="grid md:grid-cols-2 gap-8">
             {/* College Elections */}
             <div className="bg-white rounded-lg shadow">
-              <div className="p-6 border-b">
-                <div className="flex items-center gap-3">
-                  <GraduationCap className="w-6 h-6 text-blue-600" />
-                  <h2 className="text-xl font-semibold text-gray-900">
-                    College Elections
-                  </h2>
-                </div>
-              </div>
-              <div className="p-6 space-y-4">
-                <ElectionCard
-                  title="College Fest King/Queen"
-                  status="Active"
-                  endDate="Feb 10, 2025"
-                  type="college"
-                  onNavigate={onNavigate}
-                />
-                <ElectionCard
-                  title="Student Council President"
-                  status="Upcoming"
-                  endDate="Feb 15, 2025"
-                  type="college"
-                  onNavigate={onNavigate}
-                />
+            <div className="p-6 border-b">
+              <div className="flex items-center gap-3">
+                <GraduationCap className="w-6 h-6 text-blue-600" />
+                <h2 className="text-xl font-semibold text-gray-900">College Elections</h2>
               </div>
             </div>
+            <div className="p-6 space-y-4">
+              <ElectionCard 
+                title="College Fest King/Queen"
+                status="Active"
+                endDate="Feb 10, 2025"
+                type="college"
+                onNavigate={onNavigate}
+              />
+              <ElectionCard 
+                title="Student Council President"
+                status="Upcoming"
+                endDate="Feb 15, 2025"
+                type="college"
+                onNavigate={onNavigate}
+              />
+            </div>
+          </div>
 
             {/* Government Elections */}
-            <div className="bg-white rounded-lg shadow">
+            <div className="relative">
+            <div className={`bg-white rounded-lg shadow ${voterStatus !== "approved" ? "opacity-50" : ""}`}>
               <div className="p-6 border-b">
                 <div className="flex items-center gap-3">
                   <Building2 className="w-6 h-6 text-green-600" />
-                  <h2 className="text-xl font-semibold text-gray-900">
-                    Government Elections
-                  </h2>
+                  <h2 className="text-xl font-semibold text-gray-900">Government Elections</h2>
                 </div>
               </div>
               <div className="p-6 space-y-4">
-                <ElectionCard
+                <ElectionCard 
                   title="Local Council Election"
                   status="Active"
                   endDate="Feb 20, 2025"
                   type="government"
                   onNavigate={onNavigate}
                 />
-                <ElectionCard
+                <ElectionCard 
                   title="Youth Representative"
                   status="Upcoming"
                   endDate="Mar 1, 2025"
@@ -210,9 +205,17 @@ const Dashboard = ({
                 />
               </div>
             </div>
+            {voterStatus !== "approved" && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="bg-white p-4 rounded-lg shadow-lg">
+                  <p className="text-gray-600">Complete voter registration to participate in government elections</p>
+                </div>
+              </div>
+            )}
+          </div>
           </div>
 
-          {voterStatus !== "approved" && (
+          {/* {voterStatus !== "approved" && (
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="bg-white p-4 rounded-lg shadow-lg">
                 <p className="text-gray-600">
@@ -221,7 +224,7 @@ const Dashboard = ({
                 </p>
               </div>
             </div>
-          )}
+          )} */}
         </div>
 
         {/* Recent Activity */}
@@ -264,3 +267,121 @@ const Dashboard = ({
 };
 
 export default Dashboard;
+
+// Previous imports remain same...
+
+
+
+// const Dashboard = ({ 
+//   onNavigate, 
+//   onLogout, 
+//   username = "User",
+//   voterStatus = "unregistered"
+// }) => {
+//   return (
+//     <div className="min-h-screen bg-gray-50">
+//       {/* Header remains same */}
+//       <header className="bg-white shadow">
+//         {/* ... header content ... */}
+//       </header>
+
+//       <main className="container mx-auto px-4 py-8">
+//         {/* Voter Status Card */}
+//         <div className="bg-white rounded-lg shadow p-6 mb-8">
+//           <div className="flex items-center justify-between">
+//             <div>
+//               <h2 className="text-xl font-semibold text-gray-900">Voter Status</h2>
+//               {voterStatus === "unregistered" && (
+//                 <div>
+//                   <p className="text-red-600 flex items-center gap-2 mt-2">
+//                     <XCircle className="w-5 h-5" />
+//                     Not Registered for Government Elections
+//                   </p>
+//                   <p className="text-gray-600 mt-2">
+//                     You can participate in college elections. Register to access government elections.
+//                   </p>
+//                   <button 
+//                     onClick={() => onNavigate('/register-voter')}
+//                     className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+//                   >
+//                     Register for Government Elections
+//                   </button>
+//                 </div>
+//               )}
+//               {/* Other status states remain same */}
+//             </div>
+//           </div>
+//         </div>
+
+//         <div className="grid md:grid-cols-2 gap-8">
+//           {/* College Elections - Always Accessible */}
+//           <div className="bg-white rounded-lg shadow">
+//             <div className="p-6 border-b">
+//               <div className="flex items-center gap-3">
+//                 <GraduationCap className="w-6 h-6 text-blue-600" />
+//                 <h2 className="text-xl font-semibold text-gray-900">College Elections</h2>
+//               </div>
+//             </div>
+//             <div className="p-6 space-y-4">
+//               <ElectionCard 
+//                 title="College Fest King/Queen"
+//                 status="Active"
+//                 endDate="Feb 10, 2025"
+//                 type="college"
+//                 onNavigate={onNavigate}
+//               />
+//               <ElectionCard 
+//                 title="Student Council President"
+//                 status="Upcoming"
+//                 endDate="Feb 15, 2025"
+//                 type="college"
+//                 onNavigate={onNavigate}
+//               />
+//             </div>
+//           </div>
+
+//           {/* Government Elections - Requires Registration */}
+//           <div className="relative">
+//             <div className={`bg-white rounded-lg shadow ${voterStatus !== "approved" ? "opacity-50" : ""}`}>
+//               <div className="p-6 border-b">
+//                 <div className="flex items-center gap-3">
+//                   <Building2 className="w-6 h-6 text-green-600" />
+//                   <h2 className="text-xl font-semibold text-gray-900">Government Elections</h2>
+//                 </div>
+//               </div>
+//               <div className="p-6 space-y-4">
+//                 <ElectionCard 
+//                   title="Local Council Election"
+//                   status="Active"
+//                   endDate="Feb 20, 2025"
+//                   type="government"
+//                   onNavigate={onNavigate}
+//                 />
+//                 <ElectionCard 
+//                   title="Youth Representative"
+//                   status="Upcoming"
+//                   endDate="Mar 1, 2025"
+//                   type="government"
+//                   onNavigate={onNavigate}
+//                 />
+//               </div>
+//             </div>
+//             {voterStatus !== "approved" && (
+//               <div className="absolute inset-0 flex items-center justify-center">
+//                 <div className="bg-white p-4 rounded-lg shadow-lg">
+//                   <p className="text-gray-600">Complete voter registration to participate in government elections</p>
+//                 </div>
+//               </div>
+//             )}
+//           </div>
+//         </div>
+
+//         {/* Activity section remains same */}
+//       </main>
+//     </div>
+//   );
+// };
+
+// // Other component definitions remain same...
+
+// export default Dashboard;
