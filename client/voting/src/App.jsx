@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage";
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import VoterRegistration from "./pages/VoterRegistration";
+import VoterPage from "./pages/VoterPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/register-voter" element={<VoterRegistration />} />
+        <Route path="/vote" element={<VoterPage />} />
       </Routes>
     </Router>
   );

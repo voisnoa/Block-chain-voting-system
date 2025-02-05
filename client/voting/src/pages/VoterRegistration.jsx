@@ -32,6 +32,10 @@ const VoterRegistration = () => {
             formData,
             { headers: { "Content-Type": "application/json" } }
         );
+        console.log("Response from backend:", response.data);
+        localStorage.setItem("voter_id", response.data.voter.voter_id);
+        console.log("Voter ID saved:", response.data.voter.voter_id);
+
 
         setSuccess(response.data.message);
         setFormData({
