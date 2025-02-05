@@ -32,7 +32,7 @@ function ElectionCard({
         <Clock className="w-4 h-4 mr-1" />
         Ends: {endDate}
       </div>
-      <button
+      <a href="/vote"
         onClick={() => {
           if (voterStatus === "approved") {
             onNavigate("/vote");
@@ -55,7 +55,7 @@ function ElectionCard({
             ? "Vote Now"
             : "Restricted"
           : "View Details"}
-      </button>
+      </a>
     </div>
   );
 }
