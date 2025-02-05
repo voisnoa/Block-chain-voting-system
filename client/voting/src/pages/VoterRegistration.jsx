@@ -1,6 +1,9 @@
-import  React, { useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
 const VoterRegistration = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     age: "",
@@ -26,32 +29,48 @@ const VoterRegistration = () => {
     setError("");
     setSuccess("Checking voter details... Please wait.");
 
+    console.log("🔄 Submitting form..."); // ✅ Check if called multiple times
+    console.log("📩 Form Data:", formData); // ✅ Log data being sent
+    
+
     try {
-        const response = await axios.post(
-            "http://localhost:3012/register-voter",
-            formData,
-            { headers: { "Content-Type": "application/json" } }
-        );
-        console.log("Response from backend:", response.data);
-        localStorage.setItem("voter_id", response.data.voter.voter_id);
-        console.log("Voter ID saved:", response.data.voter.voter_id);
+      const response = await axios.post(
+        "http://localhost:3012/register-voter",
+        formData,
+        { headers: { "Content-Type": "application/json" } }
+      );
+      console.log("Response from backend:", response.data);
+      localStorage.setItem("voter_id", response.data.voter.voter_id);
+      console.log("Voter ID saved:", response.data.voter.voter_id);
+      console.log("Response from backend:", response.data);
 
 
-        setSuccess(response.data.message);
-        setFormData({
-            name: "",
-            age: "",
-            address: "",
-            wallet_address: "",
-            voter_id: "",
-        });
-    } catch (err) {
-        setError(err.response?.data?.error || "Registration failed");
-    } finally {
-        setLoading(false);
+      if (
+        response.data.message === "Registration successful! You are now approved to vote." ||
+        response.data.message === "Voter already registered and approved."
+    ) {
+        console.log("🚀 Navigating to /vote");
+        setTimeout(() => {
+            navigate("/vote");
+        }, 100);
     }
-};
+      
 
+      setSuccess(response.data.message);
+      setFormData({
+        name: "",
+        age: "",
+        address: "",
+        wallet_address: "",
+        voter_id: "",
+      });
+    } catch (err) {
+      console.error("❌ Error Response:", err.response); // ✅ Log full error
+      setError(err.response?.data?.error || "Registration failed");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 sm:px-6 lg:px-8">
@@ -161,4 +180,3 @@ const VoterRegistration = () => {
 };
 
 export default VoterRegistration;
-
