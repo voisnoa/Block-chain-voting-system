@@ -24,32 +24,30 @@ const VoterRegistration = () => {
     e.preventDefault();
     setLoading(true);
     setError("");
-    setSuccess("");
+    setSuccess("Checking voter details... Please wait.");
 
     try {
-      // eslint-disable-next-line no-unused-vars
-      const response = await axios.post(
-        "http://localhost:3012/register-voter",
-        formData,
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+        const response = await axios.post(
+            "http://localhost:3012/register-voter",
+            formData,
+            { headers: { "Content-Type": "application/json" } }
+        );
 
-      setSuccess("Registration successful! Awaiting admin approval.");
-      setFormData({
-        name: "",
-        age: "",
-        address: "",
-        wallet_address: "",
-        voter_id: "",
-      });
+        setSuccess(response.data.message);
+        setFormData({
+            name: "",
+            age: "",
+            address: "",
+            wallet_address: "",
+            voter_id: "",
+        });
     } catch (err) {
-      setError(err.response?.data?.error || "Registration failed");
+        setError(err.response?.data?.error || "Registration failed");
     } finally {
-      setLoading(false);
+        setLoading(false);
     }
-  };
+};
+
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 sm:px-6 lg:px-8">
