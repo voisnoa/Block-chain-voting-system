@@ -8,11 +8,13 @@ import VoterRegistration from "./pages/VoterRegistration";
 import VoterPage from "./pages/VoterPage";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
+import Results from "./pages/Results";
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/results" element={<Results/>} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<LoginPage />} />

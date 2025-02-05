@@ -7,6 +7,7 @@ const cors = require('cors');
 const voterRouter = require('./Routes/voter');
 const voteRoutes = require('./Routes/vote');
 const candidateRoutes = require("./Routes/candidateRoutes");
+const Resultrouter = require('./Routes/voteResults');
 
 
 
@@ -23,6 +24,7 @@ app.use('/', userRoutes);
 app.use('/',voterRouter)
 app.use('/', voteRoutes);
 app.use("/", candidateRoutes);
+app.use("/",Resultrouter)
 
 
 
