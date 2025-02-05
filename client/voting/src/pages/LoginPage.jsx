@@ -2,9 +2,10 @@
 import React ,{ useState } from 'react';
 import { Lock, User, ArrowRight } from 'lucide-react';
 import axios from 'axios';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     email: '',
     password: ''
@@ -16,12 +17,13 @@ const LoginPage = () => {
         const response = await axios.post("http://localhost:3012/login", credentials);
         alert(response.data.message);
         localStorage.setItem("token", response.data.token); 
+        navigate("/register-voter");
     } catch (error) {
         console.error(error);
         alert(error.response?.data?.error || "Login failed");
     }
 };
-  // const navigate = useNavigate();
+  
 
   return (
     
