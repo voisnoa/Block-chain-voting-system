@@ -5,6 +5,12 @@ const userRoutes = require('./Routes/userRoutes');
 const connectDb = require('./db');
 const cors = require('cors');
 const voterRouter = require('./Routes/voter');
+const voteRoutes = require('./Routes/vote');
+const candidateRoutes = require("./Routes/candidateRoutes");
+
+
+
+connectDb();
 
 const app = express();
 const port = 3012;
@@ -15,7 +21,9 @@ app.use(express.static('static'));
 
 app.use('/', userRoutes);
 app.use('/',voterRouter)
-connectDb();
+app.use('/', voteRoutes);
+app.use("/", candidateRoutes);
+
 
 
 app.listen(port, () => {
