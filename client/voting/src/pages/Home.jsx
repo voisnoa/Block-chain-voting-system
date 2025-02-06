@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { Vote, Shield, LineChart, Building2, GraduationCap, LockKeyhole, ChevronRight } from 'lucide-react';
+import {  Shield, LineChart, Building2, GraduationCap, LockKeyhole, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {

@@ -14,7 +14,7 @@ export default function VoterPage() {
   useEffect(() => {
     const fetchCandidates = async () => {
       try {
-        const response = await axios.get("http://localhost:3012/candidates");
+        const response = await axios.get("https://securevote.onrender.com/candidates");
         setCandidates(response.data);
       } catch (error) {
         console.error("Error fetching candidates:", error);
@@ -41,7 +41,7 @@ export default function VoterPage() {
     setLoading(true);
     setMessage("");
     try {
-      const response = await axios.post("http://localhost:3012/vote", {
+      const response = await axios.post("https://securevote.onrender.com/vote", {
         voter_id: voterId,
         candidate_id: selectedCandidate,
       });

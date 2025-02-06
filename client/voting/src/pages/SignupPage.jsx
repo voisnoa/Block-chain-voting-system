@@ -13,7 +13,7 @@ const SignupPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post("http://localhost:3012/signup", formData);
+        const response = await axios.post("https://securevote.onrender.com/signup", formData);
         alert(response.data.message);
     } catch (error) {
         console.error(error);
