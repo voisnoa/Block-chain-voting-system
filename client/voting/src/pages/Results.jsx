@@ -1,71 +1,4 @@
-// // eslint-disable-next-line no-unused-vars
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
-// import {
-//   BarChart,
-//   Bar,
-//   XAxis,
-//   YAxis,
-//   Tooltip,
-//   ResponsiveContainer,
-// } from "recharts";
 
-// export default function Results() {
-//   const [results, setResults] = useState([]);
-
-//   useEffect(() => {
-//     const fetchResults = async () => {
-//       try {
-//         const response = await axios.get("http://localhost:3012/results");
-//         setResults(response.data);
-//       } catch (error) {
-//         console.error("Error fetching results", error);
-//       }
-//     };
-//     fetchResults();
-//   }, []);
-
-//   //       setMessage("Please select a candidate.");
-//   //       return;
-//   //     }
-//   //     if (!voterId) {
-//   //       setMessage("You must be logged in to vote.");
-//   //       return;
-//   //     }
-
-//   //     setLoading(true);
-//   //     setMessage("");
-//   //     try {
-//   //       const response = await axios.post("http://localhost:3012/vote", {
-//   //         voter_id: voterId,
-//   //         candidate_id: selectedCandidate,
-//   //       });
-//   //       setMessage(response.data.message);
-//   //     } catch (error) {
-//   //       setMessage(error.response?.data?.error || "Voting failed.");
-//   //     } finally {
-//   //       setLoading(false);
-//   //     }
-//   //   };
-
-//   return (
-//     <div className="p-6 max-w-md mx-auto bg-white shadow-lg rounded-xl">
-//       <div className="space-y-2"></div>
-
-//       <div className="mt-6 p-4">
-//         <h3 className="text-lg font-bold mb-4">Live Voting Results</h3>
-//         <ResponsiveContainer width="100%" height={250}>
-//           <BarChart data={results}>
-//             <XAxis dataKey="name" />
-//             <YAxis />
-//             <Tooltip />
-//             <Bar dataKey="votes" fill="#4F46E5" />
-//           </BarChart>
-//         </ResponsiveContainer>
-//       </div>
-//     </div>
-//   );
-// }
 
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
@@ -85,7 +18,7 @@ export default function Results() {
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        const response = await axios.get("http://localhost:3012/results");
+        const response = await axios.get("https://securevote.onrender.com/results");
         setResults(response.data);
       } catch (error) {
         console.error("Error fetching results", error);

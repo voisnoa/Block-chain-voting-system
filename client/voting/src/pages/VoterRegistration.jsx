@@ -33,10 +33,10 @@ const VoterRegistration = () => {
     console.log("🔄 Submitting form..."); // ✅ Check if called multiple times
     console.log("📩 Form Data:", formData); // ✅ Log data being sent
     
-
+    //changed the localhost url to the backend url
     try {
       const response = await axios.post(
-        "http://localhost:3012/register-voter",
+        "https://securevote.onrender.com/register-voter",
         formData,
         { headers: { "Content-Type": "application/json" } }
       );

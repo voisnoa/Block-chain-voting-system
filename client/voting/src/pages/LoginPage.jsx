@@ -14,7 +14,7 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post("http://localhost:3012/login", credentials);
+        const response = await axios.post("https://securevote.onrender.com/login", credentials);
         alert(response.data.message);
         localStorage.setItem("token", response.data.token); 
         // navigate("/register-voter");
