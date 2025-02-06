@@ -2,6 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Vote, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function ElectionCard({
   title,
@@ -32,7 +33,7 @@ function ElectionCard({
         <Clock className="w-4 h-4 mr-1" />
         Ends: {endDate}
       </div>
-      <a href="/vote"
+      <Link to="/vote"
         onClick={() => {
           if (voterStatus === "approved") {
             onNavigate("/vote");
@@ -55,7 +56,7 @@ function ElectionCard({
             ? "Vote Now"
             : "Restricted"
           : "View Details"}
-      </a>
+      </Link>
     </div>
   );
 }
