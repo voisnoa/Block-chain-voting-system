@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Mail, Lock, ArrowRight, User } from 'lucide-react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
@@ -106,9 +107,9 @@ const SignupPage = () => {
             <div className="mt-6 text-center">
               <p className="text-sm text-gray-600">
                 Already have an account?{' '}
-                <a href="/login" className="font-medium text-blue-600 hover:text-blue-500">
-                  Login
-                </a>
+                {/* <a href="/login" className="font-medium text-blue-600 hover:text-blue-500"> */}
+                  <Link to="/login">Login</Link>
+                {/* </a> */}
               </p>
             </div>
           </div>
