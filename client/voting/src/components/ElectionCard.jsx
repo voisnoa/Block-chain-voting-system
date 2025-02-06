@@ -10,7 +10,7 @@ function ElectionCard({
   endDate,
   // eslint-disable-next-line no-unused-vars
   type,
-  onNavigate,
+
   voterStatus,
 }) {
   const isActive = status === "Active";
@@ -33,29 +33,31 @@ function ElectionCard({
         <Clock className="w-4 h-4 mr-1" />
         Ends: {endDate}
       </div>
-      <Link to="/vote"
-        onClick={() => {
-          if (voterStatus === "approved") {
-            onNavigate("/vote");
-          } else {
-            alert("Complete voter registration to participate.");
-          }
-        }}
-        disabled={voterStatus !== "approved"}
-        className={`w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-          isActive
+      <Link to="/vote">
+        <button
+          // onClick={() => {
+          //   if (voterStatus === "approved") {
+          //     <Link to="/vote" />;
+          //   } else {
+          //     alert("Complete voter registration to participate.");
+          //   }
+          // }}
+          disabled={voterStatus !== "approved"}
+          className={`w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+            isActive
+              ? voterStatus === "approved"
+                ? "bg-blue-600 text-white hover:bg-blue-700"
+                : "bg-gray-400 text-gray-600 cursor-not-allowed"
+              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+          }`}
+        >
+          <Vote className="w-4 h-4" />
+          {isActive
             ? voterStatus === "approved"
-              ? "bg-blue-600 text-white hover:bg-blue-700"
-              : "bg-gray-400 text-gray-600 cursor-not-allowed"
-            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-        }`}
-      >
-        <Vote className="w-4 h-4" />
-        {isActive
-          ? voterStatus === "approved"
-            ? "Vote Now"
-            : "Restricted"
-          : "View Details"}
+              ? "Vote Now"
+              : "Restricted"
+            : "View Details"}
+        </button>
       </Link>
     </div>
   );
