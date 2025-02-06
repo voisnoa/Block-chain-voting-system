@@ -1,18 +1,25 @@
+# Blockchain-Based AI-Powered Voting System
 
-# Blockchain-Based Voting System
-
-The Blockchain-Based Voting System is a secure, transparent, and decentralized voting platform leveraging blockchain technology. This system ensures that all votes are immutable, verifiable, and tamper-proof, providing a secure mechanism for democratic processes. It also integrates AI features to enhance search, classification, extraction, or generation use cases.
+The **Blockchain-Based AI-Powered Voting System** is a secure, transparent, and decentralized e-voting platform. It integrates **AI** to enhance search, classification, extraction, and generation use cases while leveraging **blockchain technology** for secure vote storage. This ensures all votes are immutable, verifiable, and tamper-proof.
 
 ![Voting System Screenshot](https://media-hosting.imagekit.io//8817bdec60e54a29/screenshot_1738693022423.png?Expires=1833301026&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=yQuUmolRZW2F84LDT5wzOFFEMdlToOirQJJlUTOpMvv8P8TgnEUVPQcXB4sUXOZSGe2StXGe3WMzpBikDX-rbsIUeVdLWMe3vrLmq23q5-R37jlUcdj3azwz3fyYvF95YkdLQt-FVwVOxxtSXgioIo5IwxcVZfkaAr-OayyncLwbXrydcCIqlXe9ZQAKJTYo0C59dgJ3pCVg7u77hnOblswzdVWjkpMyTzg1-V9uUt8w2lRr3dWP6fKpXLr2Ol6pOz0tGQaSCF~6QlGBDiEz8bngdwSwywGITFlWCUtgkNJxnf1JkmRdys7k6IUlJ7eCorj6RBIh1PADqgPWY4mVWg__)
 
-## Features
+## 🚀 Features
 
 - **Blockchain Security**: All votes are recorded on a blockchain, ensuring transparency, immutability, and auditability.
-- **AI Integration**: Features like search, classification, extraction, and generation will enhance the user experience and system functionality.
-- **Voter Registration**: A secure and decentralized system for managing voter registration through MongoDB.
-- **Real-time Updates**: Instantaneous tallying of votes with live updates on the blockchain.
-  
-## Installation
+- **AI Integration**: Uses Search, Classification, and Extraction to improve voter experience.
+- **Voter Registration**: Secure voter onboarding via MongoDB and AI-driven verification.
+- **Real-time Vote Counting**: Live vote tallying with AI-generated election summaries.
+- **Decentralized Voting**: Ensures tamper-proof elections using smart contracts.
+
+## 🛠 Tech Stack
+
+- **Frontend**: React.js, TailwindCSS, Axios, Recharts
+- **Backend**: Node.js, Express.js, MongoDB
+- **AI**: OpenAI API, PromptRepo (Optional)
+- **Blockchain**: Smart Contracts (Ethereum/Polygon)
+
+## 🔥 Installation
 
 1. Clone the repository:
     ```bash
@@ -34,10 +41,19 @@ The Blockchain-Based Voting System is a secure, transparent, and decentralized v
     npm start
     ```
 
-## Contributing
+## 🧠 AI Use Cases Implemented
 
-Feel free to fork the repository, submit issues, or make pull requests to help improve the project.
+This project implements at least **three AI use cases**:
+1. **Search** → AI-powered voter & candidate search.
+2. **Classification** → Categorizing elections & voter types.
+3. **Extraction** → Auto-filling voter details from Aadhaar/Voter ID.
+4. **Generation (Upcoming)** → AI-generated election summaries & reports.
 
-## License
+## ***Promptrepo*** may be used to structure unstructured voter data from emails, chats, and Google Sheets.
 
-This project is licensed under the MIT License.
+
+
+## ⚖️ License
+
+This project is licensed under the **MIT License**.(on progress)
+
