@@ -2,12 +2,13 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { CheckCircle2, XCircle, AlertCircle, UserCheck } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function VoterStatus({
-//   onNavigate,
-//   onLogout,
-//   username = "User",
-  voterStatus = "unregistered" // can be "unregistered", "pending", "approved"
+  //   onNavigate,
+  //   onLogout,
+  //   username = "User",
+  voterStatus = "unregistered", // can be "unregistered", "pending", "approved"
 }) {
   return (
     <div>
@@ -24,12 +25,12 @@ function VoterStatus({
           <br />
 
           {voterStatus === "unregistered" && (
-            <a
-              href="/register-voter"
+            <Link
+              to="/register-voter"
               className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
             >
               Register as Voter
-            </a>
+            </Link>
           )}
         </div>
       )}
