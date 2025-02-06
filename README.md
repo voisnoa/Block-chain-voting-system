@@ -41,7 +41,8 @@ The **Blockchain-Based AI-Powered Voting System** is a secure, transparent, and 
     npm start
     ```
 
-## 🧠 AI Use Cases Implemented
+## 🧠 AI Use Cases will be Implemented after approving protoype
+
 
 This project implements at least **three AI use cases**:
 1. **Search** → AI-powered voter & candidate search.
