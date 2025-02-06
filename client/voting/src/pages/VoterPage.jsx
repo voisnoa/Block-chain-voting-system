@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function VoterPage() {
   const [candidates, setCandidates] = useState([]);
@@ -271,12 +272,12 @@ export default function VoterPage() {
           <p className="mt-3 text-center text-red-500 font-medium">{message}</p>
         )}
 
-        <a
-          href="/results"
+        <Link
+          to="/results"
           className=" mt-4 block ml-auto w-1/3 text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
         >
           See Results
-        </a>
+        </Link>
       </div>
     </div>
   );
