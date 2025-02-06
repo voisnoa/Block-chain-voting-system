@@ -11,6 +11,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { Link } from "react-router-dom";
 
 export default function Results() {
   const [results, setResults] = useState([]);
@@ -55,12 +56,13 @@ export default function Results() {
         </div>
         
         <div className="mt-6 text-center">
-          <a 
-            href="/dashboard"
+          <Link       
+            to="/dashboard"
+            state={{ voterStatus: "approved" }}
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
           >
-            Back to Voting
-          </a>
+            Back to Dashboard
+          </Link>
         </div>
       </div>
     </div>
