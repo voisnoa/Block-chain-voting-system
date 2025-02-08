@@ -24,7 +24,7 @@ const LandingPage = () => {
              className="bg-blue-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition-colors">
               Get Started <ChevronRight className="w-4 h-4" />
             </button>
-            <button className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors">
+            <button onClick={() => navigate('/about')} className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-100 hover:shadow-lg transition-all">
               Learn More
             </button>
           </div>

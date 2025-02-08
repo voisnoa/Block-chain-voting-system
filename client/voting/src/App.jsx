@@ -9,6 +9,7 @@ import VoterPage from "./pages/VoterPage";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Results from "./pages/Results";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/register-voter" element={<VoterRegistration />} />
         <Route path="/vote" element={<VoterPage />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   );
